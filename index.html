@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech Fest 2026 | SRM MCET – Innovate • Code • Create</title>
+  <meta name="description" content="Join Tech Fest 2026 at SRM Madurai College of Engineering & Technology on March 20, 2026. Compete in Coding, Quiz, Robotics & Project Exhibition!" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 70px;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(0,212,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: gridMove 20s linear infinite;
+    }
+
+    @keyframes gridMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 60px 60px; }
+    }
+
+    .hero-parallax {
+      position: absolute; inset: 0;
+      will-change: transform, opacity;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-left { padding: 4rem 0; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--primary);
+      background: rgba(0,212,255,0.1);
+      border: 1px solid rgba(0,212,255,0.3);
+      padding: 0.45rem 1rem;
+      border-radius: 20px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      animation: pulseBorder 3s ease-in-out infinite;
+    }
+
+    .hero-badge-dot {
+      width: 8px; height: 8px;
+      background: var(--primary);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--primary);
+      animation: floatSoft 1.5s ease-in-out infinite;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.0;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title .line-1 { color: var(--text); display: block; }
+    .hero-title .line-2 {
+      display: block;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 200% auto;
+      animation: gradientShift 4s ease infinite;
+      filter: drop-shadow(0 0 20px rgba(0,212,255,0.5));
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      font-weight: 400;
+      color: var(--primary);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-tagline {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 480px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .hero-meta-item .icon {
+      width: 32px; height: 32px;
+      background: rgba(0,212,255,0.1);
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* ── Hero Right: 3D Floating Visual ── */
+    .hero-right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 480px;
+    }
+
+    .hero-center-glow {
+      width: 250px; height: 250px;
+      background: radial-gradient(circle, rgba(0,212,255,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      position: absolute;
+      animation: floatSoft 4s ease-in-out infinite;
+    }
+
+    .hero-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid;
+      animation: spin linear infinite;
+    }
+
+    .hero-ring-1 {
+      width: 300px; height: 300px;
+      border-color: rgba(0,212,255,0.2);
+      animation-duration: 20s;
+    }
+
+    .hero-ring-2 {
+      width: 220px; height: 220px;
+      border-color: rgba(168,85,247,0.25);
+      animation-duration: 14s;
+      animation-direction: reverse;
+    }
+
+    .hero-ring-3 {
+      width: 380px; height: 380px;
+      border-color: rgba(255,0,110,0.15);
+      animation-duration: 28s;
+    }
+
+    .hero-orbit-item {
+      position: absolute;
+      width: 50px; height: 50px;
+      background: var(--card-bg);
+      border: 1px solid rgba(0,212,255,0.3);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      backdrop-filter: blur(10px);
+      box-shadow: var(--glow-primary);
+      animation: floatSoft 3s ease-in-out infinite;
+    }
+
+    .orbit-1 { top: 30px; left: 50%; animation-delay: 0s; }
+    .orbit-2 { top: 50%; right: 10px; animation-delay: 0.7s; }
+    .orbit-3 { bottom: 40px; left: 50%; animation-delay: 1.4s; }
+    .orbit-4 { top: 50%; left: 10px; animation-delay: 2.1s; }
+
+    .hero-center-badge {
+      width: 160px; height: 160px;
+      background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(168,85,247,0.15));
+      border: 2px solid rgba(0,212,255,0.3);
+      border-radius: var(--radius-xl);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 0 60px rgba(0,212,255,0.2), inset 0 0 40px rgba(168,85,247,0.1);
+      animation: floatSoft 5s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    .hero-center-badge .date {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      color: var(--primary);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-center-badge .year {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-center-badge .event-count {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Countdown Banner ── */
+    .countdown-banner {
+      background: rgba(0,212,255,0.05);
+      border-top: 1px solid rgba(0,212,255,0.15);
+      border-bottom: 1px solid rgba(0,212,255,0.15);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .countdown-label {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    #countdown {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .countdown-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+    }
+
+    .countdown-num {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-shadow: 0 0 20px rgba(0,212,255,0.6);
+      min-width: 2.5ch;
+      text-align: center;
+    }
+
+    .countdown-unit-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* ── Features ── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .feature-icon {
+      width: 64px; height: 64px;
+      margin: 0 auto 1.25rem;
+      background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(168,85,247,0.1));
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem;
+      transition: var(--transition);
+    }
+
+    .feature-card:hover .feature-icon {
+      transform: scale(1.15) rotate(-5deg);
+      box-shadow: var(--glow-primary);
+      border-color: var(--primary);
+    }
+
+    .feature-title {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── Stats ── */
+    .stats-section {
+      background: linear-gradient(135deg, rgba(0,212,255,0.03), rgba(168,85,247,0.03));
+      border-top: 1px solid rgba(0,212,255,0.1);
+      border-bottom: 1px solid rgba(0,212,255,0.1);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(0,212,255,0.1);
+    }
+
+    .stat-item {
+      background: var(--dark);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Timeline ── */
+    .timeline-section { background: transparent; }
+
+    .timeline-scroll {
+      overflow-x: auto;
+      padding-bottom: 1.5rem;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .timeline-scroll::-webkit-scrollbar { display: none; }
+
+    .timeline-track {
+      display: flex;
+      gap: 0;
+      min-width: max-content;
+      padding: 2rem 0;
+    }
+
+    .timeline-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      min-width: 200px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: 50%;
+      right: -50%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), rgba(0,212,255,0.2));
+    }
+
+    .timeline-item:last-child::before { display: none; }
+
+    .timeline-dot {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--card-bg);
+      border: 2px solid var(--primary);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--glow-primary);
+      z-index: 1;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .timeline-item:hover .timeline-dot {
+      transform: scale(1.15);
+      box-shadow: 0 0 30px rgba(0,212,255,0.6);
+    }
+
+    .timeline-time {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--primary);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.3rem;
+      text-align: center;
+    }
+
+    .timeline-event-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+      text-align: center;
+      max-width: 140px;
+    }
+
+    /* ── Events Preview Cards ── */
+    .preview-events-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .preview-event-card {
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .preview-event-icon {
+      font-size: 2.5rem;
+      animation: floatSoft 3s ease-in-out infinite;
+    }
+
+    .preview-event-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .preview-event-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .preview-event-prize {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--warning);
+    }
+
+    /* ── CTA Banner ── */
+    .cta-banner {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+
+    .cta-banner-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(0,212,255,0.05), rgba(168,85,247,0.08), rgba(255,0,110,0.05));
+      background-size: 400% 400%;
+      animation: gradientShift 8s ease infinite;
+    }
+
+    .cta-banner-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      color: var(--text);
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .cta-banner-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 500px;
+      margin: 0 auto 2.5rem;
+      position: relative;
+    }
+
+    .cta-btns {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    /* ── Float Shapes ── */
+    .float-shape {
+      position: absolute;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.25;
+    }
+
+    .shape-cube {
+      width: 40px; height: 40px;
+      border: 2px solid var(--primary);
+      border-radius: 4px;
+      animation: float1 6s ease-in-out infinite;
+    }
+
+    .shape-sphere {
+      width: 30px; height: 30px;
+      background: radial-gradient(circle, var(--secondary), transparent);
+      border-radius: 50%;
+      animation: float2 8s ease-in-out infinite;
+    }
+
+    .shape-ring {
+      width: 50px; height: 50px;
+      border: 3px solid var(--accent);
+      border-radius: 50%;
+      animation: float3 10s ease-in-out infinite;
+    }
+
+    .shape-triangle {
+      width: 0; height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 35px solid rgba(0,212,255,0.5);
+      animation: float1 7s ease-in-out infinite reverse;
+    }
+
+    @media (max-width: 1024px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .preview-events-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .hero-content { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+      .hero-right { display: none; }
+      .hero-tagline { margin: 0 auto 2rem; }
+      .hero-meta { justify-content: center; }
+      .hero-ctas { justify-content: center; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .preview-events-grid { grid-template-columns: 1fr; }
+      .countdown-banner { gap: 1rem; }
+      #countdown { gap: 1rem; }
+      .countdown-num { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Scroll Progress -->
+  <div id="scroll-progress"></div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">
+      <div class="brand-icon">🚀</div>
+      <div class="brand-text">
+        <span class="brand-name">SRM MCET</span>
+        <span class="brand-sub">Tech Fest 2026</span>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="index.html#timeline">Schedule</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="register.html" class="btn-primary-sm">Register Now</a></li>
+    </ul>
+
+    <button class="hamburger" aria-label="Toggle menu" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="index.html#timeline">Schedule</a>
+    <a href="index.html#about">About</a>
+    <a href="register.html" style="color:var(--primary);font-weight:700;">Register Now →</a>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+
+      <!-- Floating shapes -->
+      <div class="float-shape shape-cube" style="top:15%;left:5%;"></div>
+      <div class="float-shape shape-sphere" style="top:60%;left:8%;"></div>
+      <div class="float-shape shape-ring" style="top:20%;right:25%;"></div>
+      <div class="float-shape shape-triangle" style="bottom:20%;right:5%;"></div>
+      <div class="float-shape shape-cube" style="bottom:30%;left:18%;animation-delay:-3s;"></div>
+    </div>
+
+    <div class="hero-parallax" id="hero-parallax"></div>
+
+    <div class="hero-content">
+      <div class="hero-left scroll-reveal">
+        <div class="hero-badge">
+          <div class="hero-badge-dot"></div>
+          Registration Open Now
+        </div>
+
+        <h1 class="hero-title">
+          <span class="line-1">TECH</span>
+          <span class="line-2">FEST 2026</span>
+        </h1>
+
+        <p class="hero-subtitle">Innovate &bull; Code &bull; Create</p>
+        <p class="hero-tagline">Unleash Your Innovation – Showcase Your Skills at SRM Madurai College of Engineering &amp; Technology's biggest annual tech extravaganza.</p>
+
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <div class="icon">📅</div>
+            <span>March 20, 2026</span>
+          </div>
+          <div class="hero-meta-item">
+            <div class="icon">⏰</div>
+            <span>9:00 AM – 4:00 PM</span>
+          </div>
+          <div class="hero-meta-item">
+            <div class="icon">📍</div>
+            <span>College Auditorium</span>
+          </div>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="register.html" class="btn btn-primary btn-lg">🚀 Register Now</a>
+          <a href="events.html" class="btn btn-secondary btn-lg">Explore Events →</a>
+        </div>
+      </div>
+
+      <!-- Hero Right Visual -->
+      <div class="hero-right">
+        <div class="hero-ring hero-ring-3"></div>
+        <div class="hero-ring hero-ring-1"></div>
+        <div class="hero-ring hero-ring-2"></div>
+
+        <div class="hero-orbit-item orbit-1 float-shape">💻</div>
+        <div class="hero-orbit-item orbit-2 float-shape">🤖</div>
+        <div class="hero-orbit-item orbit-3 float-shape">🧠</div>
+        <div class="hero-orbit-item orbit-4 float-shape">🎨</div>
+
+        <div class="hero-center-glow"></div>
+        <div class="hero-center-badge">
+          <span class="date">Mar 20, 2026</span>
+          <span class="year">2026</span>
+          <span class="event-count">4 Events · ₹21,000 Prize Pool</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COUNTDOWN ── -->
+  <div class="countdown-banner">
+    <span class="countdown-label">Event Starts In</span>
+    <div id="countdown">
+      <div class="countdown-unit">
+        <span class="countdown-num" data-unit="days">00</span>
+        <span class="countdown-unit-label">Days</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="countdown-num" data-unit="hours">00</span>
+        <span class="countdown-unit-label">Hours</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="countdown-num" data-unit="minutes">00</span>
+        <span class="countdown-unit-label">Minutes</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="countdown-num" data-unit="seconds">00</span>
+        <span class="countdown-unit-label">Seconds</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FEATURES ── -->
+  <section id="features">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <div class="section-badge">Why Join Us</div>
+        <h2 class="section-title">Experience <span class="gradient-text">Tech Fest</span> Like Never Before</h2>
+        <p class="section-subtitle">Four incredible events, one legendary day – your chance to showcase, compete, and shine.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="glass-card feature-card scroll-reveal delay-100 magnetic-card">
+          <div class="feature-icon">🎯</div>
+          <div class="feature-title">Multiple Events</div>
+          <p class="feature-desc">Choose from Coding, Quiz, Robotics & Exhibition. Something for every tech enthusiast.</p>
+        </div>
+        <div class="glass-card feature-card scroll-reveal delay-200 magnetic-card">
+          <div class="feature-icon">🏆</div>
+          <div class="feature-title">Win Big Prizes</div>
+          <p class="feature-desc">₹21,000+ total prize pool. Trophies, certificates, and glory await the champions.</p>
+        </div>
+        <div class="glass-card feature-card scroll-reveal delay-300 magnetic-card">
+          <div class="feature-icon">🤝</div>
+          <div class="feature-title">Team Up</div>
+          <p class="feature-desc">Solo or team events. Collaborate, communicate, and conquer challenges together.</p>
+        </div>
+        <div class="glass-card feature-card scroll-reveal delay-400 magnetic-card">
+          <div class="feature-icon">🎓</div>
+          <div class="feature-title">Learn & Grow</div>
+          <p class="feature-desc">Network with peers, gain experience, and build your portfolio with industry-level exposure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATS ── -->
+  <section class="stats-section" id="stats">
+    <div class="stats-grid">
+      <div class="stat-item scroll-scale">
+        <span class="stat-number" data-counter="500" data-suffix="+">0</span>
+        <span class="stat-label">Expected Participants</span>
+      </div>
+      <div class="stat-item scroll-scale delay-100">
+        <span class="stat-number" data-counter="4">0</span>
+        <span class="stat-label">Unique Events</span>
+      </div>
+      <div class="stat-item scroll-scale delay-200">
+        <span class="stat-number" data-counter="21000" data-prefix="₹" data-suffix="+">0</span>
+        <span class="stat-label">Total Prize Pool</span>
+      </div>
+      <div class="stat-item scroll-scale delay-300">
+        <span class="stat-number" data-counter="7" data-suffix=" hrs">0</span>
+        <span class="stat-label">Event Duration</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EVENTS PREVIEW ── -->
+  <section id="events-preview">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <div class="section-badge">Events</div>
+        <h2 class="section-title">Four <span class="gradient-text">Epic Competitions</span></h2>
+        <p class="section-subtitle">From coding marathons to robot battles – pick your challenge and prove your worth.</p>
+      </div>
+
+      <div class="preview-events-grid">
+        <div class="glass-card preview-event-card scroll-reveal delay-100 magnetic-card">
+          <div class="preview-event-icon">💻</div>
+          <div class="preview-event-title">Coding Competition</div>
+          <p class="preview-event-desc">Write efficient code under time pressure. Solve DSA-focused problems in 2 hours.</p>
+          <div class="preview-event-prize">🏅 ₹5,000 Prize Pool</div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <span class="tag tag-cyan">Individual</span>
+            <span class="tag tag-purple">2 Hours</span>
+          </div>
+          <a href="register-coding.html" class="btn btn-primary btn-sm">Register →</a>
+        </div>
+
+        <div class="glass-card preview-event-card scroll-reveal delay-200 magnetic-card">
+          <div class="preview-event-icon">🧠</div>
+          <div class="preview-event-title">Tech Quiz</div>
+          <p class="preview-event-desc">Test your tech knowledge across AI, Web Dev, Cloud, and Cybersecurity domains.</p>
+          <div class="preview-event-prize">🏅 ₹3,000 Prize Pool</div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <span class="tag tag-cyan">Individual</span>
+            <span class="tag tag-green">45 Minutes</span>
+          </div>
+          <a href="register-quiz.html" class="btn btn-purple btn-sm">Register →</a>
+        </div>
+
+        <div class="glass-card preview-event-card scroll-reveal delay-300 magnetic-card">
+          <div class="preview-event-icon">🤖</div>
+          <div class="preview-event-title">Robotics Challenge</div>
+          <p class="preview-event-desc">Build. Program. Compete. Navigate robots through challenging obstacle courses.</p>
+          <div class="preview-event-prize">🏅 ₹7,000 Prize Pool</div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <span class="tag tag-pink">Team (2-4)</span>
+            <span class="tag tag-amber">4 Hours</span>
+          </div>
+          <a href="register-robotics.html" class="btn btn-accent btn-sm">Register →</a>
+        </div>
+
+        <div class="glass-card preview-event-card scroll-reveal delay-400 magnetic-card">
+          <div class="preview-event-icon">🎨</div>
+          <div class="preview-event-title">Project Exhibition</div>
+          <p class="preview-event-desc">Showcase your innovation. Present your software or hardware project to judges.</p>
+          <div class="preview-event-prize">🏅 ₹6,000 Prize Pool</div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <span class="tag tag-cyan">Team (1-3)</span>
+            <span class="tag tag-purple">5 Min Pitch</span>
+          </div>
+          <a href="register-exhibition.html" class="btn btn-secondary btn-sm">Register →</a>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:3rem;" class="scroll-reveal">
+        <a href="events.html" class="btn btn-secondary btn-lg">View All Events with Full Details →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TIMELINE ── -->
+  <section id="timeline">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <div class="section-badge">Schedule</div>
+        <h2 class="section-title">Event <span class="gradient-text">Timeline</span></h2>
+        <p class="section-subtitle">A packed day of innovation and competition – March 20, 2026</p>
+      </div>
+
+      <div class="timeline-scroll scroll-reveal">
+        <div class="timeline-track">
+          <div class="timeline-item">
+            <div class="timeline-dot">🚀</div>
+            <div class="timeline-time">9:00 AM</div>
+            <div class="timeline-event-name">Registration & Check-In</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot">🎤</div>
+            <div class="timeline-time">9:30 AM</div>
+            <div class="timeline-event-name">Inauguration Ceremony</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot">💻</div>
+            <div class="timeline-time">10:00 AM</div>
+            <div class="timeline-event-name">Coding Competition Begins</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot">🧠</div>
+            <div class="timeline-time">10:30 AM</div>
+            <div class="timeline-event-name">Tech Quiz Round 1</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot">🤖</div>
+            <div class="timeline-time">11:00 AM</div>
+            <div class="timeline-event-name">Robotics Challenge</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot">🍽️</div>
+            <div class="timeline-time">1:00 PM</div>
+            <div class="timeline-event-name">Lunch Break</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot">🎨</div>
+            <div class="timeline-time">2:00 PM</div>
+            <div class="timeline-event-name">Project Exhibition</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot">🏆</div>
+            <div class="timeline-time">3:30 PM</div>
+            <div class="timeline-event-name">Prize Distribution & Closing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section id="about">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;" class="about-grid">
+        <div class="scroll-reveal-left">
+          <div class="section-badge" style="display:inline-block;margin-bottom:1.5rem;">About The Event</div>
+          <h2 class="section-title" style="text-align:left;margin-bottom:1.5rem;">
+            SRM MCET's Annual<br><span class="gradient-text">Tech Extravaganza</span>
+          </h2>
+          <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1.5rem;">
+            Organized by the CSE Department of SRM Madurai College of Engineering & Technology, Tech Fest 2026 is a platform for students to demonstrate their technical prowess and creative thinking.
+          </p>
+          <p style="color:var(--text-muted);line-height:1.8;margin-bottom:2rem;">
+            Located in Kottapalaiyam, Sivagangai District, Tamil Nadu, our college is committed to nurturing innovation and excellence in engineering education.
+          </p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.88rem;color:var(--text-muted);">
+              <span style="color:var(--primary);">📍</span> Kottapalaiyam, Sivagangai Dt., Tamil Nadu
+            </div>
+          </div>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:0.75rem;">
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.88rem;color:var(--text-muted);">
+              <span style="color:var(--primary);">🏛️</span> Organized by: CSE Department
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-reveal-right">
+          <div class="glass-card" style="padding:2rem;animation:floatSoft 4s ease-in-out infinite;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+              <div style="text-align:center;padding:1.5rem;background:rgba(0,212,255,0.05);border-radius:var(--radius-sm);border:1px solid rgba(0,212,255,0.15);">
+                <div style="font-size:2rem;margin-bottom:0.5rem;">💻</div>
+                <div style="font-family:var(--font-display);font-size:0.8rem;font-weight:700;color:var(--primary);">CODING</div>
+                <div style="font-size:0.75rem;color:var(--text-muted);">₹5,000 Prize</div>
+              </div>
+              <div style="text-align:center;padding:1.5rem;background:rgba(168,85,247,0.05);border-radius:var(--radius-sm);border:1px solid rgba(168,85,247,0.15);">
+                <div style="font-size:2rem;margin-bottom:0.5rem;">🧠</div>
+                <div style="font-family:var(--font-display);font-size:0.8rem;font-weight:700;color:var(--secondary);">TECH QUIZ</div>
+                <div style="font-size:0.75rem;color:var(--text-muted);">₹3,000 Prize</div>
+              </div>
+              <div style="text-align:center;padding:1.5rem;background:rgba(255,0,110,0.05);border-radius:var(--radius-sm);border:1px solid rgba(255,0,110,0.15);">
+                <div style="font-size:2rem;margin-bottom:0.5rem;">🤖</div>
+                <div style="font-family:var(--font-display);font-size:0.8rem;font-weight:700;color:var(--accent);">ROBOTICS</div>
+                <div style="font-size:0.75rem;color:var(--text-muted);">₹7,000 Prize</div>
+              </div>
+              <div style="text-align:center;padding:1.5rem;background:rgba(16,185,129,0.05);border-radius:var(--radius-sm);border:1px solid rgba(16,185,129,0.15);">
+                <div style="font-size:2rem;margin-bottom:0.5rem;">🎨</div>
+                <div style="font-family:var(--font-display);font-size:0.8rem;font-weight:700;color:var(--success);">EXHIBITION</div>
+                <div style="font-size:0.75rem;color:var(--text-muted);">₹6,000 Prize</div>
+              </div>
+            </div>
+            <div style="text-align:center;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(0,212,255,0.1);">
+              <span style="font-family:var(--font-display);font-size:1.5rem;font-weight:900;" class="gradient-text">₹21,000+</span>
+              <span style="color:var(--text-muted);font-size:0.85rem;display:block;margin-top:0.25rem;">Total Prize Pool</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BANNER ── -->
+  <section class="cta-banner">
+    <div class="cta-banner-bg"></div>
+    <!-- Floating shapes -->
+    <div class="float-shape shape-cube" style="top:10%;left:5%;opacity:0.2;"></div>
+    <div class="float-shape shape-ring" style="bottom:15%;right:8%;opacity:0.2;"></div>
+    <div class="float-shape shape-sphere" style="top:60%;left:15%;opacity:0.2;"></div>
+
+    <div class="scroll-reveal">
+      <h2 class="cta-banner-title">Ready to <span class="gradient-text">Join the Revolution?</span></h2>
+      <p class="cta-banner-subtitle">Don't miss the chance to showcase your talent. Join hundreds of students at Tech Fest 2026!</p>
+      <div class="cta-btns">
+        <a href="register.html" class="btn btn-primary btn-lg">🚀 Start Your Journey</a>
+        <a href="events.html" class="btn btn-secondary btn-lg">Explore Events</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-name">SRM MCET – Tech Fest 2026</div>
+          <div class="brand-college">SRM Madurai College of Engineering & Technology</div>
+          <p class="footer-desc">Innovate • Code • Create. Join us for a day of technology, competition, and celebration of innovation.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" title="Instagram">📸</a>
+            <a href="#" class="social-link" title="Twitter/X">🐦</a>
+            <a href="#" class="social-link" title="LinkedIn">💼</a>
+            <a href="#" class="social-link" title="YouTube">▶️</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-heading">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="index.html#timeline">Schedule</a></li>
+            <li><a href="index.html#about">About</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-heading">Events</div>
+          <ul class="footer-links">
+            <li><a href="register-coding.html">Coding Competition</a></li>
+            <li><a href="register-quiz.html">Tech Quiz</a></li>
+            <li><a href="register-robotics.html">Robotics Challenge</a></li>
+            <li><a href="register-exhibition.html">Project Exhibition</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <div class="footer-heading">Contact</div>
+          <p>📍 Kottapalaiyam, Sivagangai Dt., Tamil Nadu</p>
+          <p>📅 March 20, 2026 | 9:00 AM – 4:00 PM</p>
+          <p>🏛️ CSE Department, SRM MCET</p>
+          <p>📧 techfest2026@srmmcet.edu.in</p>
+          <p>📞 +91 98765 43210</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 SRM MCET Tech Fest. All rights reserved.</div>
+        <div>
+          <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
+          <a href="#">Terms of Service</a> &nbsp;·&nbsp;
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    /* Hero parallax */
+    const heroParallax = document.getElementById('hero-parallax');
+    if (heroParallax) {
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        heroParallax.style.transform = `translateY(${y * 0}px)`;
+      }, { passive: true });
+    }
+
+    /* About grid responsive */
+    const aboutGrid = document.querySelector('.about-grid');
+    if (aboutGrid) {
+      const mq = window.matchMedia('(max-width: 768px)');
+      const check = () => {
+        aboutGrid.style.gridTemplateColumns = mq.matches ? '1fr' : '1fr 1fr';
+      };
+      mq.addEventListener('change', check);
+      check();
+    }
+  </script>
+</body>
+</html>
